@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>BMI Calculator</title>
+
+<style type="text/css">
+body {
+    background-color:#1A3797;
+}
+h1 {
+    
+	color:white;
+}
+h2 {
+    
+	color:white;
+}
+p{   color:white;
+}
+
+
+
+</style>
+
+<script language="JavaScript">
+<!--
+function calculateBmi() {
+//Obtain user inputs
+        var height=Number(document.getElementById("height").value);
+        var heightunits=document.getElementById("heightunits").value;
+        var weight=Number(document.getElementById("weight").value);
+        var weightunits=document.getElementById("weightunits").value;
+
+
+        //Convert all units to metric
+        if (heightunits=="inches") height/=39.3700787;
+        if (weightunits=="lb") weight/=2.20462;
+if(weight > 0 && height > 0){	
+var finalBmi = parseFloat(weight/(height*height));
+document.bmiForm.bmi.value = finalBmi.toFixed(2);
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are too thin."
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy."
+}
+if(finalBmi > 25){
+document.bmiForm.meaning.value = "That you have overweight."
+}
+}
+else{
+alert("Please Fill in everything correctly")
+}
+}
+//-->
+</script>
+</head>
+<body>
+<h1>Body Mass Index Calculator</h1>
+<form name="bmiForm">
+<p>Your Weight: <input type="text" name="weight" size="10" id= "weight">
+	<select type="multiple" id="weightunits">
+        <option value="kg" selected="selected">kilograms</option>
+        <option value="lb">pounds</option>
+    </select>
+</p>
+<p>Your Height: <input type="text" name="height" size="10" id= "height">
+	<select type="multiple" id="heightunits">
+        <option value="metres" selected="selected">metres</option>
+        <option value="inches">inches</option>
+    </select>
+</p>
+<input type="button" value="Calculate BMI" onClick="calculateBmi()"><br />
+<h2>Your BMI: <input type="text" name="bmi" size="10"><br /></h2>
+<h2>This Means: <input type="text" name="meaning" size="25"><br /></h2>
+<input type="reset" value="Reset" />
+</form>
+</body>
+</html>
